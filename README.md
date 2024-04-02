@@ -6,6 +6,7 @@ Il progetto consiste nell'implementazione di una classe Set in C++, la quale for
 Il set, come suggerisce il nome, è una struttura dati che rappresenta una collezione di elementi unici (nessun duplicato è permesso). 
 Il progetto include anche un file main.cpp per testare le funzionalità della classe Set.
 
+
 Dettagli:
 
 ➢ Classe Set Templata:
@@ -13,6 +14,7 @@ La classe Set è implementata come una classe templata, permettendo così la cre
 
 Gestisce la compatibilità tra i tipi attraverso l'uso del cast; infatti, nel file main.cpp ci sono molteplici esempi della creazione di set con diversi tipi di dati 
 e delle relative conversioni tra i tipi di dati di diversi set.
+
 
 ➢ Gestione della memoria:
 
@@ -28,6 +30,7 @@ Dopo la copia, la memoria precedentemente allocata viene liberata.
 Inoltre, è stato implementato un costruttore secondario per ottimizzare le prestazioni: anziché utilizzare la tecnica di raddoppio esponenziale, 
 la capacità del set viene inizializzata in base alla dimensione dell'array di input. Questo approccio è ottimale per situazioni in cui è previsto 
 l'inserimento di un grande numero di elementi nel set e si desidera minimizzare il sovraccarico dovuto a frequenti riallocazioni.
+
 
 ➢ Overloading degli operatori:
 
@@ -58,6 +61,7 @@ f) ”Operatore di Stream di Output (operator<<)”:
 
 Utilizzato per stampare il contenuto di un set, inviando un set a uno stream di output (es: std::cout).
 
+
 ➢ Iteratore costante:
 
 La classe const_iterator, definita all'interno della classe Set, serve a gestire le strutture dati in modo sicuro. 
@@ -72,6 +76,7 @@ b) La classe const_iterator è progettata per supportare un'iterazione in avanti
 
 c) La classe Set fornisce i metodi begin() e end() per ottenere iteratori costanti rispettivamente all'inizio e alla fine del set. Questi metodi facilitano l'uso dell'iteratore in loop.
 
+
 ➢ Funzioni Globali:
 
 Le funzioni globali come “filter_out” e “save” offrono operazioni aggiuntive che estendono la funzionalità del set oltre le operazioni standard fornite dalla classe Set. Pur essendo definite al di fuori della classe Set, queste funzioni interagiscono con oggetti di tipo Set:
@@ -79,6 +84,7 @@ Le funzioni globali come “filter_out” e “save” offrono operazioni aggiun
 a) La funzione “filter_out” filtra gli elementi di un set in base a un predicato specificato.
 
 b) La funzione “save” permette di salvare il contenuto di un set in un file.
+
 
 ➢ Eccezioni:
 Sono state implementate due eccezioni personalizzate (”duplicateElementException” e “elementNotFoundException”) per gestire casi specifici come l'aggiunta di un elemento duplicato o la rimozione di un elemento non presente nel set. A tale proposito, nel file main.cpp, ci sono due righe di codice (alla riga 42 e alla riga 53) commentati che servono per testare l’uso di queste eccezioni.
@@ -136,6 +142,7 @@ b) “Numero Dipinti per Data (on_actionNumero_dipinti_per_Data_triggered)“:
 Mostra un grafico che riporta il numero di dipinti in base al campo Data.
 
 
+
 ➢ Gestione interna dei dati della tabella:
 
 La classe Set viene utilizzata per rappresentare ogni riga, ovvero ogni dipinto, nel modo seguente:
@@ -146,7 +153,8 @@ b) Questi set sono poi raccolti in una QList<Set<QString>>, dove ogni elemento d
 
 In pratica, viene implementata una struttura multidimensionale, dove ogni set è una dimensione che contiene vari attributi, e la QList di questi set rappresenta un'altra dimensione che tiene traccia di tutti i dipinti.
 
-Gestione interna dei grafici:
+
+➢ Gestione interna dei grafici:
 
 La classe CustomChartView viene utilizzata per migliorare la visualizzazione dei grafici, estendendo QChartView, un widget fornito dal modulo Qt Charts.
 
@@ -157,6 +165,7 @@ a) Si occupa della gestione degli eventi di mouse e zoom:Eventi Mouse:
 a) Eventi Rotellina:
 
 “wheelEvent“ è utilizzato per implementare lo zoom in e zoom out quando l'utente usa la rotellina del mouse.
+
 
 ➢ MessageBox:
 
