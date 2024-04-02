@@ -43,18 +43,22 @@ Utilizzato per stampare il contenuto di un set, inviando un set a uno stream di 
 ➢ Iteratore costante:
 La classe const_iterator, definita all'interno della classe Set, serve a gestire le strutture dati in modo sicuro. Questa classe permette di accedere agli elementi di un set in sola lettura, senza modificarli, garantendo così la costanza dei dati durante l'iterazione.
 Alcuni aspetti interessanti da notare includono:
+
 a) La classe const_iterator utilizza un puntatore di tipo “const T*” che punta all’elemento corrente del set. Questo assicura che gli elementi a cui si accede attraverso l’iteratore non possano essere modificati.
 b) La classe const_iterator è progettata per supportare un'iterazione in avanti (forward iteration), ovvero può muoversi solo dal primo all'ultimo elemento del set.
 c) La classe Set fornisce i metodi begin() e end() per ottenere iteratori costanti rispettivamente all'inizio e alla fine del set. Questi metodi facilitano l'uso dell'iteratore in loop.
 
 ➢ Funzioni Globali:
 Le funzioni globali come “filter_out” e “save” offrono operazioni aggiuntive che estendono la funzionalità del set oltre le operazioni standard fornite dalla classe Set. Pur essendo definite al di fuori della classe Set, queste funzioni interagiscono con oggetti di tipo Set:
+
 a) La funzione “filter_out” filtra gli elementi di un set in base a un predicato specificato.
 b) La funzione “save” permette di salvare il contenuto di un set in un file.
 
 ➢ Eccezioni:
 Sono state implementate due eccezioni personalizzate (”duplicateElementException” e “elementNotFoundException”) per gestire casi specifici come l'aggiunta di un elemento duplicato o la rimozione di un elemento non presente nel set. A tale proposito, nel file main.cpp, ci sono due righe di codice (alla riga 42 e alla riga 53) commentati che servono per testare l’uso di queste eccezioni.
+
 Inoltre, sono state utilizzate diverse eccezioni standard del C++ per gestire situazioni specifiche:
+
 a) “std::bad_alloc”, che viene sollevata in caso di fallimento di una nuova allocazione di memoria.
 b) “std::out_of_range”, che viene sollevata quando si tenta di accedere a elementi fuori dai limiti validi.
 c) “std::runtime_error” , che viene sollevata in caso di fallimento nell'apertura di un file.
@@ -71,8 +75,10 @@ Dettagli:
 
 ➢ Interfaccia grafica:
 L’interfaccia principale include una tabella che mostra i dati caricati da file .csv.
+
 Questi dati non sono modificabili e ogni riga della tabella rappresenta un dipinto distinto, mentre ogni colonna rappresenta gli attributi di ciascun dipinto (scuola, autore, titolo, data e sala).
 Funzionalità principali attraverso pulsanti:
+
 a) “Aggiungi (on_pushButton_aggiungi_clicked)“:
 Serve per aggiungere un nuovo dipinto alla fine della tabella, basandosi sui dati forniti nei campi di input corrispondenti.
 b) “Elimina (on_pushButton_elimina_clicked)“:
@@ -91,6 +97,7 @@ Mostra un grafico che riporta il numero di dipinti in base al campo Data.
 
 ➢ Gestione interna dei dati della tabella:
 La classe Set viene utilizzata per rappresentare ogni riga, ovvero ogni dipinto, nel modo seguente:
+
 a) Ogni riga della tabella dei dipinti è rappresentata da un oggetto Set<QString>, dove ogni elemento del set rappresenta una proprietà unica del dipinto, come la scuola, l'autore, il titolo, la data e la sala.
 b) Questi set sono poi raccolti in una QList<Set<QString>>, dove ogni elemento della lista rappresenta un dipinto diverso.
 In pratica, viene implementata una struttura multidimensionale, dove ogni set è una dimensione che contiene vari attributi, e la QList di questi set rappresenta un'altra dimensione che tiene traccia di tutti i dipinti.
@@ -98,6 +105,7 @@ In pratica, viene implementata una struttura multidimensionale, dove ogni set è
 Gestione interna dei grafici:
 
 La classe CustomChartView viene utilizzata per migliorare la visualizzazione dei grafici, estendendo QChartView, un widget fornito dal modulo Qt Charts.
+
 a) Si occupa della gestione degli eventi di mouse e zoom:Eventi Mouse:
 “mousePressEvent“, “mouseMoveEvent“ e “mouseReleaseEvent“ sono stati ridefiniti per implementare una logica personalizzata, come la gestione di eventi di trascinamento con il mouse per spostare la vista del grafico.
 a) Eventi Rotellina:
@@ -105,6 +113,7 @@ a) Eventi Rotellina:
 
 ➢ MessageBox:
 Spesso si ricorre all’’utilizzo di MessageBox per messaggi di avviso o informazioni all'utente, quando certe condizioni non sono state soddisfatte:
+
 a) Nel metodo “on_pushButton_aggiungi_clicked“ viene mostrato un avviso se almeno uno dei cinque campi di input non è stato riempito prima di aggiungere un nuovo dipinto.
 b) Nel metodo “on_pushButton_elimina_clicked“ viene mostrato un avviso se nessun dipinto è stato selezionato prima di procedere con la rimozione.
 c) Nel metodo “on_pushButton_cerca_clicked“ viene mostrato un avviso se il campo di input è vuoto prima di iniziare la ricerca di un dipinto e un messaggio informativo se la ricerca non restituisce risultati.
