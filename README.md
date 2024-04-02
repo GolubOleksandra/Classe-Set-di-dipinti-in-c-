@@ -1,6 +1,7 @@
 PROGETTO C++
 
 Riassunto:
+
 Il progetto consiste nell'implementazione di una classe Set in C++, la quale fornisce funzionalità per la gestione di collezioni di elementi generici. 
 Il set, come suggerisce il nome, è una struttura dati che rappresenta una collezione di elementi unici (nessun duplicato è permesso). 
 Il progetto include anche un file main.cpp per testare le funzionalità della classe Set.
@@ -63,6 +64,7 @@ c) “std::runtime_error” , che viene sollevata in caso di fallimento nell'ape
 PROGETTO GT
 
 Riassunto:
+
 Il progetto consiste nello sviluppo di un'applicazione con interfaccia grafica utente (GUI) per la gestione dei dipinti presenti nella Galleria degli Uffizi.
 
 Dettagli:
