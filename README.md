@@ -68,6 +68,7 @@ Riassunto:
 Il progetto consiste nello sviluppo di un'applicazione con interfaccia grafica utente (GUI) per la gestione dei dipinti presenti nella Galleria degli Uffizi.
 
 Dettagli:
+
 ➢ Interfaccia grafica:
 L’interfaccia principale include una tabella che mostra i dati caricati da file .csv.
 Questi dati non sono modificabili e ogni riga della tabella rappresenta un dipinto distinto, mentre ogni colonna rappresenta gli attributi di ciascun dipinto (scuola, autore, titolo, data e sala).
@@ -82,6 +83,7 @@ d) “Ripristina (on_pushButton_iniziale_clicked)“:
 Ripristina la tabella alla sua forma iniziale dopo l'aggiunta o l'eliminazione di righe.
 
 Ulteriori opzioni disponibili nella barra del menu:
+
 a) “Percentuale Dipinti per Scuola (on_actionPercentuale_dipinti_per_Scuola_triggered)“:
 Mostra un grafico che riporta la percentuale di dipinti per ciascuna scuola.
 b) “Numero Dipinti per Data (on_actionNumero_dipinti_per_Data_triggered)“:
@@ -94,6 +96,7 @@ b) Questi set sono poi raccolti in una QList<Set<QString>>, dove ogni elemento d
 In pratica, viene implementata una struttura multidimensionale, dove ogni set è una dimensione che contiene vari attributi, e la QList di questi set rappresenta un'altra dimensione che tiene traccia di tutti i dipinti.
 
 Gestione interna dei grafici:
+
 La classe CustomChartView viene utilizzata per migliorare la visualizzazione dei grafici, estendendo QChartView, un widget fornito dal modulo Qt Charts.
 a) Si occupa della gestione degli eventi di mouse e zoom:Eventi Mouse:
 “mousePressEvent“, “mouseMoveEvent“ e “mouseReleaseEvent“ sono stati ridefiniti per implementare una logica personalizzata, come la gestione di eventi di trascinamento con il mouse per spostare la vista del grafico.
