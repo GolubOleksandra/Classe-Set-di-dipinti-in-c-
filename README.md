@@ -10,48 +10,71 @@ Dettagli:
 
 ➢ Classe Set Templata:
 La classe Set è implementata come una classe templata, permettendo così la creazione di set di qualsiasi tipo di dato (es: Set<int>, Set<double>, Set<char>, Set<string>, ecc.).
+
 Gestisce la compatibilità tra i tipi attraverso l'uso del cast; infatti, nel file main.cpp ci sono molteplici esempi della creazione di set con diversi tipi di dati 
 e delle relative conversioni tra i tipi di dati di diversi set.
 
 ➢ Gestione della memoria:
 La classe Set gestisce la memoria in modo dinamico; pertanto, la capacità di ogni set viene incrementata esponenzialmente per ridurre il numero 
 di riallocazioni necessarie durante l'aggiunta di nuovi elementi.
+
 Per soddisfare questa esigenza, è stato creato un costruttore di default: inizialmente, viene allocata la memoria per l’array che conterrà 
 gli elementi del set (inizialmente vuoto), impostando la sua capacità a 1. Quando un nuovo elemento viene aggiunto e il set raggiunge la sua capacità massima, 
 la capacità viene raddoppiata. A questo punto, un nuovo array di dimensioni maggiori viene allocato e gli elementi esistenti vengono copiati in esso. 
 Dopo la copia, la memoria precedentemente allocata viene liberata.
+
 Inoltre, è stato implementato un costruttore secondario per ottimizzare le prestazioni: anziché utilizzare la tecnica di raddoppio esponenziale, 
 la capacità del set viene inizializzata in base alla dimensione dell'array di input. Questo approccio è ottimale per situazioni in cui è previsto 
 l'inserimento di un grande numero di elementi nel set e si desidera minimizzare il sovraccarico dovuto a frequenti riallocazioni.
 
 ➢ Overloading degli operatori:
 Questa tecnica semplifica l’utilizzo degli oggetti della classe Set, controllando meglio il funzionamento di ogni operatore sovrascritto:
+
 a) “Operatore di Assegnamento (operator=)”:
+
 Utilizzato per copiare tutti gli elementi di un set in un altro. Si protegge contro l'auto-assegnazione verificando se l'oggetto sorgente è 
 diverso dall'oggetto destinatario prima di procedere con la copia.
+
 b) “Operatore di Accesso di Sola Lettura (operator[])”:
+
 Fornisce un accesso in sola lettura agli elementi del set.
+
 c) ”Operatore di Uguaglianza (operator==)”:
+
 Controlla se due set sono uguali, cioè se contengono gli stessi elementi;
+
 d) ”Operatore di Unione (operator+)”:
+
 Crea un nuovo set che è l'unione di due set. Se un elemento è presente in entrambi i set, viene incluso una sola volta nel set risultante.
+
 e) ”Operatore di Intersezione (operator-)”:
+
 Crea un nuovo set che è l'intersezione di due set. Gli elementi che sono unici per un solo set vengono esclusi dal set risultante.
+
 f) ”Operatore di Stream di Output (operator<<)”:
+
 Utilizzato per stampare il contenuto di un set, inviando un set a uno stream di output (es: std::cout).
 
 ➢ Iteratore costante:
-La classe const_iterator, definita all'interno della classe Set, serve a gestire le strutture dati in modo sicuro. Questa classe permette di accedere agli elementi di un set in sola lettura, senza modificarli, garantendo così la costanza dei dati durante l'iterazione.
+
+La classe const_iterator, definita all'interno della classe Set, serve a gestire le strutture dati in modo sicuro. 
+
+Questa classe permette di accedere agli elementi di un set in sola lettura, senza modificarli, garantendo così la costanza dei dati durante l'iterazione.
+
 Alcuni aspetti interessanti da notare includono:
 
 a) La classe const_iterator utilizza un puntatore di tipo “const T*” che punta all’elemento corrente del set. Questo assicura che gli elementi a cui si accede attraverso l’iteratore non possano essere modificati.
+
 b) La classe const_iterator è progettata per supportare un'iterazione in avanti (forward iteration), ovvero può muoversi solo dal primo all'ultimo elemento del set.
+
 c) La classe Set fornisce i metodi begin() e end() per ottenere iteratori costanti rispettivamente all'inizio e alla fine del set. Questi metodi facilitano l'uso dell'iteratore in loop.
 
 ➢ Funzioni Globali:
+
 Le funzioni globali come “filter_out” e “save” offrono operazioni aggiuntive che estendono la funzionalità del set oltre le operazioni standard fornite dalla classe Set. Pur essendo definite al di fuori della classe Set, queste funzioni interagiscono con oggetti di tipo Set:
 
 a) La funzione “filter_out” filtra gli elementi di un set in base a un predicato specificato.
+
 b) La funzione “save” permette di salvare il contenuto di un set in un file.
 
 ➢ Eccezioni:
@@ -60,7 +83,9 @@ Sono state implementate due eccezioni personalizzate (”duplicateElementExcepti
 Inoltre, sono state utilizzate diverse eccezioni standard del C++ per gestire situazioni specifiche:
 
 a) “std::bad_alloc”, che viene sollevata in caso di fallimento di una nuova allocazione di memoria.
+
 b) “std::out_of_range”, che viene sollevata quando si tenta di accedere a elementi fuori dai limiti validi.
+
 c) “std::runtime_error” , che viene sollevata in caso di fallimento nell'apertura di un file.
 
 **************
