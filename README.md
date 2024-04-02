@@ -6,6 +6,7 @@ Il set, come suggerisce il nome, è una struttura dati che rappresenta una colle
 Il progetto include anche un file main.cpp per testare le funzionalità della classe Set.
 
 Dettagli:
+
 ➢ Classe Set Templata:
 La classe Set è implementata come una classe templata, permettendo così la creazione di set di qualsiasi tipo di dato (es: Set<int>, Set<double>, Set<char>, Set<string>, ecc.).
 Gestisce la compatibilità tra i tipi attraverso l'uso del cast; infatti, nel file main.cpp ci sono molteplici esempi della creazione di set con diversi tipi di dati 
